@@ -24,9 +24,9 @@ public class DB {
         try {
             Connection c = getConnection();
             //String sql = "create table e_student( id serial primary key, name varchar(30) not null, email varchar(30) not null unique,	password varchar(30) not null, mobile varchar(10) not null unique)";
-           String sql = "insert into e_student (name,email,password,mobile) values (\"ravi\",\"ravi@gmail.com\", \"123456\", \"4656\") ";
+           String sql = "insert into e_student (name,email,password,mobile) values ('ravi','ravi@gmail.com', '123456', '4656'); ";
             PreparedStatement ps = c.prepareStatement(sql);
-            if(ps.execute()) status=1;
+            status = ps.executeUpdate();
             c.close();
         } catch (SQLException ex) {
             Logger.getLogger(DB.class.getName()).log(Level.SEVERE, null, ex);
