@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,6 +42,10 @@ public class HelloWordl2 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloWordl2 at " + request.getContextPath() + "</h1>");
+            Connection c = DB.getConnection();
+            if(c!=null) out.println("Successful connection");
+            else out.println("Unsuccessful connection");
+            
             out.println("</body>");
             out.println("</html>");
         } finally {
