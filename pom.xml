@@ -21,6 +21,7 @@
             <version>6.0</version>
             <scope>provided</scope>
         </dependency>
+        
     </dependencies>
 
     <build>
@@ -48,13 +49,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.1</version>
+                <version>3.0.2</version>
                 <executions>
+                    
                     <execution>
                         <phase>validate</phase>
                         <goals>
                             <goal>copy</goal>
                         </goals>
+                        
                         <configuration>
                             <outputDirectory>${endorsed.dir}</outputDirectory>
                             <silent>true</silent>
@@ -65,11 +68,26 @@
                                     <version>6.0</version>
                                     <type>jar</type>
                                 </artifactItem>
+                               
+                            <artifactItem>
+                                <groupId>com.github.jsimone</groupId>
+                                <artifactId>webapp-runner</artifactId>
+                                <version>8.5.31.0</version>
+                                <destFileName>webapp-runner.jar</destFileName>
+                            </artifactItem>
+                      
+                                
                             </artifactItems>
                         </configuration>
+                        
+                     
+                       
+                   
                     </execution>
+                    
                 </executions>
             </plugin>
+            
         </plugins>
     </build>
 
