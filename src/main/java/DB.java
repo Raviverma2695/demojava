@@ -23,7 +23,7 @@ public class DB {
         int status=0;
         try {
             Connection c = getConnection();
-            String sql = "create table e_student( id int(6) unsigned zerofill auto_increment primary key, name varchar(30) not null, email varchar(30) not null unique,	password varchar(30) not null, mobile char(10) not null unique)";
+            String sql = "create table e_student( id serial primary key, name varchar(30) not null, email varchar(30) not null unique,	password varchar(30) not null, mobile varchar(10) not null unique)";
             PreparedStatement ps = c.prepareStatement(sql);
             if(ps.execute()) status=1;
             c.close();
