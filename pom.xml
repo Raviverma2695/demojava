@@ -55,8 +55,7 @@
                     <phase>package</phase>
                     <goals><goal>copy</goal></goals>
                     <configuration>
-                            <outputDirectory>${endorsed.dir}</outputDirectory>
-                            <silent>true</silent>
+                            
                         <artifactItems>
                             <artifactItem>
                                 <groupId>com.github.jsimone</groupId>
