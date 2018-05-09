@@ -42,10 +42,12 @@ public class HelloWordl2 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloWordl2 at " + request.getContextPath() + "</h1>");
-            Connection c = DB.getConnection();
+            /*Connection c = DB.getConnection();
             if(c!=null) out.println("Successful connection");
             else out.println("Unsuccessful connection");
-            
+            */
+            int s = DB.tableCreates();
+            out.println(s);
             out.println("</body>");
             out.println("</html>");
         } finally {
